@@ -8,9 +8,11 @@
 
 #import "Ball.h"
 
-@interface Ball ()
+//@interface Ball ()
+//
+//@end
 
-@end
+//static const NSInteger maxBallSpeed = 5;
 
 @implementation Ball
 
@@ -23,4 +25,5 @@
     }
     return self;
 }
+
 @end
