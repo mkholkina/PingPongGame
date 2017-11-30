@@ -27,6 +27,7 @@
 @end
 
 static const NSInteger maxBallSpeed = 5;
+static const NSInteger countForEndGame = 10;
 
 @implementation ViewController
 
@@ -170,7 +171,7 @@ static const NSInteger maxBallSpeed = 5;
     [self.gameCount setText:self.currentCount];
     
     
-    if ((self.computerCount >= 10) || (self.userCount >= 10))
+    if ((self.computerCount >= countForEndGame) || (self.userCount >= countForEndGame))
     {
         [self waitForNewGame];
     }
@@ -190,15 +191,15 @@ static const NSInteger maxBallSpeed = 5;
     NSLog(@"\n Do you want to start new game?");
     
     self.gameStatus = [[UILabel alloc] initWithFrame:CGRectMake(self.view.center.x - 100, self.gameCount.frame.origin.y-100, 200, 50)];
-    if (self.userCount >= 5)
+    if (self.userCount >= countForEndGame)
     {
         self.gameStatus.backgroundColor = [UIColor greenColor];
-        self.gameStatus.text = @"You are win!";
+        self.gameStatus.text = @"You won :)";
     }
     else
     {
         self.gameStatus.backgroundColor = [UIColor redColor];
-        self.gameStatus.text = @"You are looser";
+        self.gameStatus.text = @"You lose :(";
     }
     self.gameStatus.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:self.gameStatus];
